@@ -8,7 +8,10 @@ filetype off
 set rtp+=~/.config/nvim/bundle/vundle
 call vundle#begin('~/.config/nvim/bundle')
 
+" =======
 " Plugins
+" =======
+
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -28,7 +31,9 @@ filetype on
 
 
 
+" =============
 " Plugin config
+" =============
 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
@@ -52,11 +57,9 @@ let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#A4E57E'
 
 " NERDTree
-" start by default
 autocmd VimEnter * NERDTree
-
-" show hidden files
 let NERDTreeShowHidden = 1
+let g:NERDTreeWinSize=34
 
 " airline
 " NeoVim doesn't currently support changing the font,
@@ -65,7 +68,9 @@ let g:airline_powerline_fonts = 1
 
 
 
+" ================
 " display settings
+" ================
 
 " syntax highlighting
 syntax enable
@@ -98,6 +103,9 @@ set relativenumber
 autocmd InsertEnter * set number norelativenumber
 autocmd InsertLeave * set relativenumber
 
+" enable soft word wrap
+set linebreak
+
 " only redraw when needed
 set lazyredraw
 
@@ -108,7 +116,9 @@ set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline
 
 
 
+" ================
 " command settings
+" ================
 
 " show autocomplete for commands
 set wildmenu
@@ -118,7 +128,9 @@ set incsearch
 
 
 
+" =============
 " misc settings
+" =============
 
 " hide buffers
 set hidden
